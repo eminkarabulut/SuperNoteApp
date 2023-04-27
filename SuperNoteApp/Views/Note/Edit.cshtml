@@ -1,0 +1,38 @@
+﻿@using SuperNoteApp.Models.NoteModels;
+@model NoteEditModel
+
+<div class="row mb-3">
+    <div class="col">
+        <h1 class="display-4 border-bottom">Edit Note</h1>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4 offset-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Title" class="col-form-label">Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Lorem ipsum" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="col-form-label">Description</label>
+                <textarea asp-for="Description" rows="4" class="form-control" placeholder="Lorem ipsum dolor sit a met."></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="IsDraft" type="checkbox" />
+                <label asp-for="IsDraft" class="col-form-label">Is Draft</label>
+            </div>
+            <div class="form-group">
+                <input asp-for="IsPrivate" type="checkbox" />
+                <label asp-for="IsPrivate" class="col-form-label">Is Private</label>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm">Save</button>
+                <a class="btn btn-secondary btn-sm" asp-action="Index">Back to List!</a>
+            </div>
+        </form>
+    </div>
+</div>
